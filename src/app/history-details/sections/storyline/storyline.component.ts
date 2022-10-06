@@ -17,7 +17,14 @@ export class StorylineComponent implements OnInit {
 
   selectNode(nodeIndex: number) {
     const currentNavigationHistory = this.navigationHistory.getValue();
-    this.navigationHistory.next(currentNavigationHistory.slice(0, nodeIndex));
+    this.navigationHistory.next(currentNavigationHistory.slice(0, nodeIndex + 1));
+  }
+
+  goBack() {
+    if (this.navigationHistory.getValue().length > 1) {
+      const currentNavigationHistory = this.navigationHistory.getValue();
+      this.navigationHistory.next(currentNavigationHistory.slice(0, -1));
+    }
   }
 
 }

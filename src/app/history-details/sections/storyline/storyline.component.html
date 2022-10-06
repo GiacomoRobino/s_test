@@ -1,12 +1,18 @@
 <div class="section">
-  <div
-    class="section"
-    *ngFor="
-      let navigationHistoryElement of navigationHistory | async;
-      index as i
-    "
-    (click)="selectNode(i)"
-  >
-    {{ navigationHistoryElement.id }}
+  <h4>Navigation History:</h4>
+  <button (click)="goBack()">Back</button>
+  <div class="storyline-elements-container">
+    <app-single-item
+      class="section storyline-voice"
+      *ngFor="
+        let navigationHistoryElement of navigationHistory | async;
+        index as i;
+        let last = last
+      "
+      (click)="selectNode(i)"
+      [itemId]="navigationHistoryElement.id"
+      [suffix]="last ? '' : ' >'"
+    >
+    </app-single-item>
   </div>
 </div>

@@ -1,0 +1,8 @@
+.item-container:hover {
+    background-color:white;
+    color:black;
+  }
+.item-container:hover {
+    background-color:black;
+    color:white;
+  }

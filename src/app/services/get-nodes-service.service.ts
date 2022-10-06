@@ -23,7 +23,7 @@ export class GetNodesServiceService {
   {
     id: "3",
     detail: "description 3",
-    subNodesId: []
+    subNodesId: ["1"]
   }
   ]
 

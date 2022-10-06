@@ -7,8 +7,7 @@ import { nodeModel } from '../models/nodeModel';
 })
 export class LastHistoryElementPipe implements PipeTransform {
 
-  transform(value: Array<any> | null, field: string): string | null {
-    console.log(value)
+  transform(value: Array<any> | null, field: string): any | null {
     if (value === null || value === undefined) {
       return null;
     }

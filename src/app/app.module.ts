@@ -6,6 +6,7 @@ import { HistoryDetailsComponent } from './history-details/history-details.compo
 import { StorylineComponent } from './history-details/sections/storyline/storyline.component';
 import { SubNodesContainerComponent } from './history-details/sections/sub-nodes-container/sub-nodes-container.component';
 import { LastHistoryElementPipe } from './pipes/last-history-element.pipe';
+import { SingleItemComponent } from './history-details/single-item/single-item.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { LastHistoryElementPipe } from './pipes/last-history-element.pipe';
     HistoryDetailsComponent,
     StorylineComponent,
     SubNodesContainerComponent,
-    LastHistoryElementPipe
+    LastHistoryElementPipe,
+    SingleItemComponent
   ],
   imports: [
     BrowserModule

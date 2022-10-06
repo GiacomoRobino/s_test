@@ -1,5 +1,11 @@
 <div class="subnodes section">
-  <ul>
+  <h4>Subnodes:</h4>
+  <ul
+    *ngIf="
+      (navigationHistory | async | lastHistoryElement: 'subNodesId').length > 0;
+      else noSubnodesBlock
+    "
+  >
     <li
       *ngFor="
         let nodeId of navigationHistory
@@ -8,7 +14,12 @@
         index as i
       "
     >
-      <div class="section" (click)="selectNode(nodeId)">Item: {{ nodeId }}</div>
+      <app-single-item
+        (click)="selectNode(nodeId)"
+        [itemId]="nodeId"
+        [prefix]="'+'"
+      ></app-single-item>
     </li>
   </ul>
+  <ng-template #noSubnodesBlock>This node has no subnodes</ng-template>
 </div>
