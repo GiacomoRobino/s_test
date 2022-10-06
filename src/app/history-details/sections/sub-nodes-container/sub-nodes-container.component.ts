@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { nodeModel } from 'src/app/models/nodeModel';
 import { GetNodesServiceService } from 'src/app/services/get-nodes-service.service';
+import { NavigationHistoryService } from 'src/app/services/navigation-history.service';
 
 
 @Component({
@@ -9,13 +10,11 @@ import { GetNodesServiceService } from 'src/app/services/get-nodes-service.servi
   templateUrl: './sub-nodes-container.component.html',
   styleUrls: ['./sub-nodes-container.component.css']
 })
-export class SubNodesContainerComponent implements OnInit {
-  @Input() navigationHistory !: BehaviorSubject<Array<nodeModel>>;
+export class SubNodesContainerComponent {
+  public navigationHistory = this.navigationHistoryService.getHistory()
 
-  constructor(private getNodesService: GetNodesServiceService) { }
+  constructor(private getNodesService: GetNodesServiceService, private navigationHistoryService: NavigationHistoryService) { }
 
-  ngOnInit(): void {
-  }
 
   selectNode(nodeId: string) {
     const currentNavigationHistory = this.navigationHistory.getValue();

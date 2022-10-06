@@ -1,19 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { nodeModel } from 'src/app/models/nodeModel';
+import { NavigationHistoryService } from 'src/app/services/navigation-history.service';
 
 @Component({
   selector: 'app-storyline',
   templateUrl: './storyline.component.html',
   styleUrls: ['./storyline.component.css']
 })
-export class StorylineComponent implements OnInit {
-  @Input() navigationHistory !: BehaviorSubject<Array<nodeModel>>;
+export class StorylineComponent {
+  public navigationHistory = this.navigationHistoryService.getHistory();
 
-  constructor() { }
+  constructor(private navigationHistoryService: NavigationHistoryService) { }
 
-  ngOnInit(): void {
-  }
 
   selectNode(nodeIndex: number) {
     const currentNavigationHistory = this.navigationHistory.getValue();

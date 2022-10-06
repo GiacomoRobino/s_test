@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, BehaviorSubject } from 'rxjs';
 import { nodeModel } from '../models/nodeModel';
 import { GetNodesServiceService } from '../services/get-nodes-service.service';
+import { NavigationHistoryService } from '../services/navigation-history.service';
 
 @Component({
   selector: 'app-history-details',
@@ -10,15 +11,14 @@ import { GetNodesServiceService } from '../services/get-nodes-service.service';
 })
 export class HistoryDetailsComponent implements OnInit {
 
-  constructor(private getNodesService: GetNodesServiceService) { }
+  constructor(private navigationHistoryService: NavigationHistoryService) { }
 
   public currentNode !: nodeModel;
 
   public navigationHistory: BehaviorSubject<Array<nodeModel>> = new BehaviorSubject<Array<nodeModel>>([]);
 
   ngOnInit(): void {
-    this.currentNode = this.getNodesService.getFirstNode();
-    this.navigationHistory.next([this.currentNode])
+    this.navigationHistory = this.navigationHistoryService.getHistory()
   }
 
 }

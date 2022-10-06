@@ -1,5 +1,5 @@
 <div class="container">
-  <app-storyline [navigationHistory]="navigationHistory"></app-storyline>
+  <app-storyline></app-storyline>
   <div class="description section">
     <h3>Details:</h3>
     <div>
@@ -7,7 +7,5 @@
       {{ navigationHistory | async | lastHistoryElement: "detail" }}
     </div>
   </div>
-  <app-sub-nodes-container
-    [navigationHistory]="navigationHistory"
-  ></app-sub-nodes-container>
+  <app-sub-nodes-container></app-sub-nodes-container>
 </div>
