@@ -1,0 +1,12 @@
+<div class="section">
+  <div
+    class="section"
+    *ngFor="
+      let navigationHistoryElement of navigationHistory | async;
+      index as i
+    "
+    (click)="selectNode(i)"
+  >
+    {{ navigationHistoryElement.id }}
+  </div>
+</div>

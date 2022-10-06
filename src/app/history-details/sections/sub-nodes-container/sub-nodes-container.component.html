@@ -1,0 +1,14 @@
+<div class="subnodes section">
+  <ul>
+    <li
+      *ngFor="
+        let nodeId of navigationHistory
+          | async
+          | lastHistoryElement: 'subNodesId';
+        index as i
+      "
+    >
+      <div class="section" (click)="selectNode(nodeId)">Item: {{ nodeId }}</div>
+    </li>
+  </ul>
+</div>
