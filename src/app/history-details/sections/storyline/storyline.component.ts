@@ -13,7 +13,6 @@ export class StorylineComponent {
 
   constructor(private navigationHistoryService: NavigationHistoryService) { }
 
-
   selectNode(nodeIndex: number) {
     const currentNavigationHistory = this.navigationHistory.getValue();
     this.navigationHistory.next(currentNavigationHistory.slice(0, nodeIndex + 1));

@@ -11,14 +11,14 @@ import { NavigationHistoryService } from 'src/app/services/navigation-history.se
   styleUrls: ['./sub-nodes-container.component.css']
 })
 export class SubNodesContainerComponent {
-  public navigationHistory = this.navigationHistoryService.getHistory()
+  public navigationHistory = this.navigationHistoryService.getHistory();
 
   constructor(private getNodesService: GetNodesServiceService, private navigationHistoryService: NavigationHistoryService) { }
 
 
-  selectNode(nodeId: string) {
+  selectNode(node: nodeModel) {
     const currentNavigationHistory = this.navigationHistory.getValue();
-    currentNavigationHistory.push(this.getNodesService.getNodeById(nodeId));
+    currentNavigationHistory.push(this.getNodesService.getNodeById(node.id));
     this.navigationHistory.next(currentNavigationHistory);
   }
 

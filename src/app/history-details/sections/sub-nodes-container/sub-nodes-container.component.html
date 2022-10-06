@@ -8,15 +8,16 @@
   >
     <li
       *ngFor="
-        let nodeId of navigationHistory
+        let node of navigationHistory
           | async
-          | lastHistoryElement: 'subNodesId';
+          | lastHistoryElement: 'subNodesId'
+          | getNodesByIdPipe;
         index as i
       "
     >
       <app-single-item
-        (click)="selectNode(nodeId)"
-        [itemId]="nodeId"
+        (selectNode)="selectNode($event)"
+        [item]="node"
         [prefix]="'+'"
       ></app-single-item>
     </li>
