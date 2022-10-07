@@ -27,7 +27,7 @@ export class GetNodesServiceService {
   },
   {
     id: "4",
-    detail: "description 3",
+    detail: "description 4",
     subNodesId: []
   }
   ]

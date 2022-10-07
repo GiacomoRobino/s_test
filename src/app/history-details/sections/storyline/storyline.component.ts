@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { nodeModel } from 'src/app/models/nodeModel';
+import { Component } from '@angular/core';
 import { NavigationHistoryService } from 'src/app/services/navigation-history.service';
 
 @Component({
