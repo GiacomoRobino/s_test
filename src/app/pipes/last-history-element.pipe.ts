@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { nodeModel } from '../models/nodeModel';
 
 @Pipe({
   name: 'lastHistoryElement',

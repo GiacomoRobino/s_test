@@ -8,6 +8,7 @@ import { SubNodesContainerComponent } from './history-details/sections/sub-nodes
 import { LastHistoryElementPipe } from './pipes/last-history-element.pipe';
 import { SingleItemComponent } from './history-details/single-item/single-item.component';
 import { GetNodesByIdPipePipe } from './pipes/get-nodes-by-id-pipe.pipe';
+import { OneElementInHistoryPipe } from './pipes/one-element-in-history.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GetNodesByIdPipePipe } from './pipes/get-nodes-by-id-pipe.pipe';
     SubNodesContainerComponent,
     LastHistoryElementPipe,
     SingleItemComponent,
-    GetNodesByIdPipePipe
+    GetNodesByIdPipePipe,
+    OneElementInHistoryPipe
   ],
   imports: [
     BrowserModule

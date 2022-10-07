@@ -13,7 +13,7 @@ export class GetNodesServiceService {
   {
     id: "1",
     detail: "description 1",
-    subNodesId: ["3"]
+    subNodesId: ["3", "4"]
   },
   {
     id: "2",
@@ -24,6 +24,11 @@ export class GetNodesServiceService {
     id: "3",
     detail: "description 3",
     subNodesId: ["1"]
+  },
+  {
+    id: "4",
+    detail: "description 3",
+    subNodesId: []
   }
   ]
 
